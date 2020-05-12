@@ -49,8 +49,8 @@ installOhMyZsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   fi
 
-  sed -i '' -e 's:^ZSH_THEME=.*:ZSH_THEME="'$theme'":' ~/.zshrc
-  sed -i '' -e 's:^plugins=.*:plugins=('"$plugins"'):' ~/.zshrc
+  sed -i -e 's:^ZSH_THEME=.*:ZSH_THEME="'$theme'":' ~/.zshrc
+  sed -i -e 's:^plugins=.*:plugins=('"$plugins"'):' ~/.zshrc
 
   if [ "$?" -eq 0 ]; then
     zsh
